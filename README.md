@@ -16,6 +16,8 @@ For extra safety, copy the .html file to a USB stick and run it from a seperate 
 - [Wallet Address Generator](https://github.com/whotooktwarden/generateSecretOffline)
 - Wallet Art uses some assets found on the [official ripple website](http://www.ripple.com)
 - Everything else (Wallet art and generator) by Mr. PeanutBelly (That's me!)
+
+
 I made this tool for the same reason bitcoinpaperwallet was created. I wanted to make it easier for people to "gift" XRP or make an "idiot-proof" wallet.
 
 This will hopefully also help raise awareness and acceptance of XRP as a digital token..
