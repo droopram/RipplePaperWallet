@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XRP Wallet Generator</title>
+        <!--
+            Hi There! I'm sure I could write a really long and complicated section on
+            how it's all licensed and open source but really, who reads all of that?
+
+            All you need to know is, this was made by Dennis Roopram | dennisroopram@hawk-software.com.
+
+            I made this in my spare time and mostly for personal use but decided that other XRP users might
+            find this usefull as well!
+
+            All credits for the wallet template and tri-fold design go to Canton Becker (bitcoinpaperwallet.com)
+        -->
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="assets/style.css" type="text/css">
+        <!-- QR Code Generator -->
+        <script src="assets/qrcode.js" type="text/javascript"></script>       
+        <!-- Ripple API -->
+        <!-- SRC: https://github.com/whotooktwarden/generateSecretOffline -->
+        <script src="assets/ripple-0.16.5.js" type="text/javascript"></script>
+        <!-- Code to make it work :) --> 
+        <script src="assets/base.js" type="text/javascript"></script>
+        <style type="text/css" media="print">
+            @page { size: landscape; }
+          </style>
+    </head>
+    <body>
+        <h1>XRP Wallet Generator</h1>
+        <div id="instructions" class="popup">
+            <div class="popup-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <h3>Instructions</h3>                
+                    <p>
+                        You can use this tool to generate a cold paper wallet. <br/>You should run this file on a computer
+                        you trust and disconnect the computer from the internet if possible. 
+                        <br/>The basic concept and design is the same as <a href="http://www.bitcoinpaperwallet.com">bitcoinpaperwallet.com</a>.
+                        Canton Becker has included allot of information, tips, tricks and even an <a href="https://www.youtube-nocookie.com/embed/a47rrYBWjWQ?rel=0">instructional video</a> on his website.
+                    </p>
+                    <h4>Step 1. Acquire A Ripple address</h4>
+                    <p>
+                        First off, you're gonna need a private and public address to store your XRP in.
+                        You can use the button "<b>Generate new address</b>" to generate one or you can use a different wallet generator
+                        such as bithomp.com or any other XRP Wallet Address Generator.<br/>
+                        If you already have a public key and secret key, you can simply input them in the input fields.
+                    </p>
+        
+                    <h4>Step 2. Generate your wallet</h4>
+                    <p>
+                        Click the big blue "Generate" button. You should see your brand new wallet appear!
+                    </p>
+                    <h4>Step 3. Print wallet</h4>
+                    <p>
+                        The next step is fairly simple. Just click on the "print front" button.
+                        Take your printed piece of paper and put it back in the printer feed, printed side up (May differ depending on your printer).
+                        Then just print the back.
+                    </p>
+                    <a href="javascript:closePopup();" class="btn">Ok, got it!</a>
+            </div>         
+        </div>
+        <div id="credits" class="popup">
+                <div class="popup-content">
+                        <span class="close" onclick="closePopup()">&times;</span>
+                        <h3>Credits</h3>                
+                        <p>
+                            - <a href="https://bitcoinpaperwallet.com">Wallet Tri-fold design template</a> by Canton Becker <br/>
+                            - <a href="https://github.com/davidshimjs/qrcodejs">QR Code Generator</a> by Davidshimjs <br/>
+                            - <a href="https://github.com/whotooktwarden/generateSecretOffline">Wallet Address Generator</a> by WhoTookWarden <br/>
+                            <br/>
+                            XRP Wallet art and generator by Mr. PeanutBelly.<br/>
+                            <br/>
+                            I made this tool for the same reason bitcoinpaperwallet was created. I wanted to make it easier for people to "gift" XRP or make an "idiot-proof" wallet.<br/>
+                            This will hopefully also help raise awareness and acceptance of XRP as a digital token.. <br/>
+                            If you feel like i've helped you out, feel free to leave a tip :)!<br/><br/>
+                            r4znxmLsMNKActDT1Sx718ykEMEm6TuLk7<br/>
+                            <img src="data:image/png;base64,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"/>
+                        </p>
+                        <a href="javascript:closePopup();" class="btn">Close</a>
+                </div>
+        </div>
+        <div class="wrapper">
+            <ul class="simplemenu">
+                <li><a href="javascript:openPopup('instructions');">1. Instructions</a></li>
+                <li><a href="javascript:openPopup('credits')">2. Credits and stuff</a></li>
+                <li><a href="javascript:generateAddress();">3. Generate new address</a></li>
+            </ul>
+            <form>
+                <div class="col-3">
+                    <label>Public Address</label>
+                    <input id="sPubkey" type="text" placeholder="e.g. rPi1oWNmwh4axjaj9JUgSn1EcdXUyZgKu6" value="" />
+                </div>
+                <div class="col-3">
+                    <label>Secret Key</label>
+                    <input id="sPrivkey" type="text" placeholder="e.g. ss9WotXey4dHEBZNuCxZX9WJHJmVF" value=""/>
+                </div>
+                <div class="col-3">
+                    <a href="javascript:generate();" class="btn">Generate</a>
+                </div>                        
+            </form>
+            <div class="wallet-wrap">
+                <ul class="simplemenu">
+                    <li><a href="javascript:doPrint('front');">Click here to print front</a></li>
+                    <li><a href="javascript:doPrint('back');">Click here to print back</a></li>
+                </ul>
+                    
+                    
+                <div id="front" class="wallet">
+                    <img src="./assets/wallet_front.png" />
+                    <div id="pubkey">PUBLIC KEY</div>
+                    <div id="pubkey_alt">PUBLIC KEY</div>
+                    <div id="pubkey_qr"></div>
+                    <div id="privkey">SECRET KEY</div>
+                    <div id="privkey_alt">SECRET KEY</div>
+                    <div id="privkey_qr"></div>
+                </div>
+            </div>
+
+            <div class="wallet-wrap">
+                <div id="back" class="wallet">
+                    <img src="./assets/wallet_back.png" />                        
+                </div>           
+            </div>
+            <hr/>
+            <p>Made with <3 by Mr. Peanutbelly<br/>Tip Jar: r4znxmLsMNKActDT1Sx718ykEMEm6TuLk7</p>
+        </div>
+    </body>
+</html>
