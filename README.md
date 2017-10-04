@@ -1,7 +1,7 @@
 # RipplePaperWallet
 A simple cold paper wallet generator for Ripple XRP's!
 
-#Instructions
+# Instructions
 It's pretty simple. Just download the .HTML file and run it in a browser.
 I recommend Google Chrome as this works best and allows a landscape printing mode.
 Safari works well enough but does not allow landscape.
