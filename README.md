@@ -7,3 +7,15 @@ I recommend Google Chrome as this works best and allows a landscape printing mod
 Safari works well enough but does not allow landscape.
 
 For extra safety, copy the .html file to a USB stick and run it from a seperate laptop or computer that you trust and disconnect it from the internet.
+
+**If you generate an address, make sure you test it first by depositing *AND* spending a small amount before pouring all your XRP into it!**
+
+# Credits
+- [Wallet Tri-fold design template](https://bitcoinpaperwallet.com) by Canton Becker
+- [QR Code Generator](https://github.com/davidshimjs/qrcodejs)
+- [Wallet Address Generator](https://github.com/whotooktwarden/generateSecretOffline)
+- Wallet Art uses some assets found on the [official ripple website](http://www.ripple.com)
+- Everything else (Wallet art and generator) by Mr. PeanutBelly (That's me!)
+I made this tool for the same reason bitcoinpaperwallet was created. I wanted to make it easier for people to "gift" XRP or make an "idiot-proof" wallet.
+
+This will hopefully also help raise awareness and acceptance of XRP as a digital token..
