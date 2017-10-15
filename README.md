@@ -16,8 +16,7 @@ For extra safety, copy the .html file to a USB stick and run it from a seperate 
 **If you generate an address, make sure you test it first by depositing *AND* spending a small amount before pouring all your XRP into it!**
 
 
-# Instructions
-Tips:
+# Tips
 - You could use a hologram sticker to keep the private key closed.
 - Laminate the paper to protect it.
 - Don't use an online printing service.
